@@ -15,6 +15,6 @@ status = 0
 strip.showColor(neopixel.colors(NeoPixelColors.Black))
 basic.forever(function () {
     if (status == 1) {
-        strip.showBarGraph(input.lightLevel(), 255)
+        strip.showBarGraph(input.soundLevel(), 255)
     }
 })
