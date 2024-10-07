@@ -16,12 +16,13 @@ status = 0
 strip.showColor(neopixel.colors(NeoPixelColors.Black))
 basic.forever(function () {
     if (status == 1) {
+        let Index = 0
         farbe = neopixel.rgb(randint(0, 150), randint(0, 150), randint(0, 150))
         for (let Index = 0; Index <= 32; Index++) {
             strip.setPixelColor(Index, farbe)
             strip.show()
             basic.pause(100)
-            strip.setPixelColor(Index, neopixel.colors(NeoPixelColors.Black))
         }
+        strip.setPixelColor(Index, neopixel.colors(NeoPixelColors.Black))
     }
 })
