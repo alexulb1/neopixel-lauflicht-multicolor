@@ -15,11 +15,6 @@ status = 0
 strip.showColor(neopixel.colors(NeoPixelColors.Black))
 basic.forever(function () {
     if (status == 1) {
-        for (let Index = 0; Index <= 32; Index++) {
-            strip.setPixelColor(Index, neopixel.rgb(randint(0, 150), randint(0, 150), randint(0, 150)))
-            strip.show()
-            basic.pause(100)
-            strip.setPixelColor(Index, neopixel.colors(NeoPixelColors.Black))
-        }
+        strip.showBarGraph(input.lightLevel(), 255)
     }
 })
