@@ -7,6 +7,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     basic.showNumber(status)
     strip.showColor(neopixel.colors(NeoPixelColors.Black))
 })
+let farbe = 0
 let status = 0
 let strip: neopixel.Strip = null
 strip = neopixel.create(DigitalPin.P1, 32, NeoPixelMode.RGB)
@@ -15,9 +16,9 @@ status = 0
 strip.showColor(neopixel.colors(NeoPixelColors.Black))
 basic.forever(function () {
     if (status == 1) {
-        let Index = 0
-        strip.setPixelColor(Index, neopixel.rgb(randint(0, 150), randint(0, 150), randint(0, 150)))
+        farbe = neopixel.rgb(randint(0, 150), randint(0, 150), randint(0, 150))
         for (let Index = 0; Index <= 32; Index++) {
+            strip.setPixelColor(Index, farbe)
             strip.show()
             basic.pause(100)
             strip.setPixelColor(Index, neopixel.colors(NeoPixelColors.Black))
